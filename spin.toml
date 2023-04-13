@@ -1,0 +1,20 @@
+spin_manifest_version = "1"
+authors = ["pierrickc"]
+description = ""
+name = "rust-api01"
+trigger = { type = "http", base = "/api" }
+version = "0.1.0"
+
+[[component]]
+id = "rust-api01"
+source = "target/wasm32-wasi/release/rust_api01.wasm"
+allowed_http_hosts = []
+[component.trigger]
+route = "/FooBar"
+
+[[component]]
+id = "echo"
+source = "echo/target/wasm32-wasi/release/echo.wasm"
+allowed_http_hosts = []
+[component.trigger]
+route = "/echo"
