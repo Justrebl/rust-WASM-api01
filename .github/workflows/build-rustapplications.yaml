@@ -20,6 +20,8 @@ jobs:
             archive: zip tar.gz
     steps:
       - uses: actions/checkout@master
+        env: 
+          GITHUB_TOKEN: ${{secrets.SGITHUB_TOKEN}}
       - name: Compile
         id: compile
         uses: rust-build/rust-build.action@v1.4.3
